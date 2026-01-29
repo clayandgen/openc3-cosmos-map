@@ -1,0 +1,5 @@
+# Set VARIABLEs here to allow variation in your plugin
+
+TOOL map "Map"
+  INLINE_URL main.js
+  ICON mdi-map
