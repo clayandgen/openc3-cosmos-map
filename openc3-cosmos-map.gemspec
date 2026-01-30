@@ -4,9 +4,7 @@
 Gem::Specification.new do |s|
   s.name = 'openc3-cosmos-map'
   s.summary = 'Map'
-  s.description = <<-EOF
-    Map Tool to stream WMTS/TMS basemaps and overlay dynamic tracks and static icons
-  EOF
+  s.description = 'Map Tool to stream WMTS/TMS basemaps and overlay dynamic tracks and static icons'
   s.license = 'MIT'
   s.authors = ['Clay Kramp']
   s.email = ['clay@openc3.com']
