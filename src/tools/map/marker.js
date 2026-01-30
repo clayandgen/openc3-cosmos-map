@@ -1,9 +1,6 @@
 /*
-# Copyright 2026 OpenC3, Inc.
+# Copyright 2026 Clay Kramp
 # All Rights Reserved.
-#
-# This file may also be used under the terms of a commercial license
-# if purchased from OpenC3, Inc.
 */
 
 import Feature from 'ol/Feature'

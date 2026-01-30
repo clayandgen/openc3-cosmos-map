@@ -1,3 +1,8 @@
+/*
+# Copyright 2026 Clay Kramp
+# All Rights Reserved.
+*/
+
 import { createApp, h } from 'vue'
 import singleSpaVue from 'single-spa-vue'
 
