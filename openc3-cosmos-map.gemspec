@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.metadata = {
     "source_code_uri" => "https://github.com/clayandgen/openc3-cosmos-map",
-    "openc3_minimum_cosmos_version" => "6.0.0",
+    "openc3_cosmos_minimum_version" => "6.0.0",
     "openc3_store_access_type" => "public",
     "openc3_store_keywords" => "Map, WMTS, TMS, OpenLayers"
   }
