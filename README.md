@@ -2,7 +2,7 @@
 
 A map visualization tool for OpenC3 COSMOS that displays geographic positions from telemetry data in real-time. Supports WMTS and TMS tile services for base maps, with the ability to track satellite/vehicle positions and place static markers.
 
-![Map Tool Screenshot](store_img.png)
+![Map Tool Screenshot](public/store_img.png)
 
 ## Features
 
