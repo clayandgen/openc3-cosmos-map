@@ -3,16 +3,23 @@
 # Create the overall gemspec
 Gem::Specification.new do |s|
   s.name = 'openc3-cosmos-map'
-  s.summary = 'OpenC3 openc3-cosmos-map plugin'
+  s.summary = 'Map'
   s.description = <<-EOF
-    openc3-cosmos-map plugin for deployment to OpenC3
+    Map Tool to stream WMTS/TMS basemaps and overlay dynamic tracks and static icons
   EOF
   s.license = 'MIT'
   s.authors = ['Clay Kramp']
   s.email = ['clay@openc3.com']
-  s.homepage = 'https://github.com/OpenC3/cosmos'
+  s.homepage = 'https://github.com/clayandgen/openc3-cosmos-map'
   s.platform = Gem::Platform::RUBY
   s.required_ruby_version = '>= 3.0'
+
+  s.metadata = {
+    "source_code_uri" => "https://github.com/clayandgen/openc3-cosmos-map",
+    "openc3_minimum_cosmos_version" => "6.0.0",
+    "openc3_store_access_type" => "public",
+    "openc3_store_keywords" => "Map, WMTS, TMS, OpenLayers"
+  }
 
   if ENV['VERSION']
     s.version = ENV['VERSION'].dup

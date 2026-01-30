@@ -1,66 +1,75 @@
-# OpenC3 COSMOS Plugin
+# OpenC3 COSMOS Map Tool
 
-See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
+A map visualization tool for OpenC3 COSMOS that displays geographic positions from telemetry data in real-time. Supports WMTS and TMS tile services for base maps, with the ability to track satellite/vehicle positions and place static markers.
 
-Update this comment with your own description.
+## Features
 
-## Getting Started
+### Map Services
+- **WMTS (Web Map Tile Service)**: Connect to WMTS endpoints by providing a GetCapabilities URL. The tool automatically discovers available layers and tile matrix sets.
+- **TMS (Tile Map Service)**: Connect to XYZ tile servers using URL templates with `{z}`, `{x}`, `{y}` placeholders.
 
-1. Edit the .gemspec file fields: name, summary, description, authors, email, and homepage
-1. Update the LICENSE.txt file with your company name
+### Tracks
+Track moving objects by subscribing to telemetry data:
+- Select target, packet, and lat/lon telemetry items
+- Configurable trail time (how much history to display)
+- Customizable track colors
+- Support for historical data playback with start/end times
+- Automatic antimeridian handling for global tracks
+- Hover tooltips showing timestamp, latitude, and longitude
 
-## Building non-tool / widget plugins
+### Markers
+Place static markers on the map:
+- Multiple icon options: Ground Station, Antenna, Aircraft, Satellite, Tower, Ship, Vehicle, Pin, Flag, Star, Quadcopter, Helicopter
+- Customizable colors
+- Optional labels
 
-1. <Path to COSMOS installation>/openc3.sh cli rake build VERSION=X.Y.Z (or openc3.bat for Windows)
-   - VERSION is required
-   - gem file will be built locally
+### Configuration
+- Save and load configurations to preserve map settings, tracks, and markers
+- Configurations can be loaded via URL parameter: `?config=myconfig`
 
-## Building tool / widget plugins using a local Ruby/Node/pnpm/Rake Environment
+## Menu Options
 
-1. pnpm install --frozen-lockfile --ignore-scripts
-1. rake build VERSION=1.0.0
+### File Menu
+- **Open Configuration**: Load a previously saved configuration
+- **Save Configuration**: Save current map settings, tracks, and markers
+- **Reset Configuration**: Clear all settings and return to defaults
+- **Set Map Server**: Configure WMTS or TMS tile source
+- **Map Options**: Set map center coordinates and zoom level
+- **Reset View**: Return to default map view
 
-## Building tool / widget plugins using Docker and the openc3-node container
+### Map Menu
+- **Add Track**: Create a new telemetry track
+- **View Tracks**: List, edit, or delete existing tracks
+- **Add Marker**: Place a static marker on the map
+- **View Markers**: List, edit, or delete existing markers
+- **Clear All Tracks**: Remove all tracks
+- **Clear All Markers**: Remove all markers
 
-If you don’t have a local node environment, you can use our openc3-node container to build custom tools and custom widgets
+## Building
 
-Mac / Linux:
-
+```bash
+pnpm install --frozen-lockfile --ignore-scripts
+rake build VERSION=1.0.0
 ```
-docker run -it -v `pwd`:/openc3/local:z -w /openc3/local docker.io/openc3inc/openc3-node sh
-```
-
-Windows:
-
-```
-docker run -it -v %cd%:/openc3/local -w /openc3/local docker.io/openc3inc/openc3-node sh
-```
-
-1. pnpm install --frozen-lockfile --ignore-scripts
-1. rake build VERSION=1.0.0
 
 ## Installing into OpenC3 COSMOS
 
 1. Go to the OpenC3 Admin Tool, Plugins Tab
-1. Click the install button and choose your plugin.gem file
-1. Fill out plugin parameters
-1. Click Install
+2. Click the install button and choose your plugin.gem file
+3. Click Install
 
-## Contributing
+## Development
 
-We encourage you to contribute to OpenC3!
+```bash
+# Install dependencies
+pnpm install
 
-Contributing is easy.
+# Build for development (watch mode)
+pnpm run serve
 
-1. Fork the project
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+# Build for production
+pnpm run build
 
-Before any contributions can be incorporated we do require all contributors to agree to a Contributor License Agreement
-
-This protects both you and us and you retain full rights to any code you write.
-
-## License
-
-This OpenC3 plugin is released under the MIT License. See [LICENSE.txt](LICENSE.txt)
+# Lint
+pnpm run lint
+```
